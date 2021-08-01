@@ -86,3 +86,15 @@
     width: 100%;
   }
 }
+
+@media only screen and (min-width: 992px) {
+  .highlight {
+    background: #dc3545;
+    color: white !important;
+    border-radius: 5px;
+  }
+
+  .mleft {
+    margin-left: 3px;
+  }
+}

@@ -9,6 +9,8 @@ import MoviesTable from "./moviesTable";
 import { Link } from "react-router-dom";
 import _ from "lodash";
 import SearchBox from "./searchBox";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 class Movies extends Component {
   state = {
@@ -19,6 +21,7 @@ class Movies extends Component {
     searchQuery: "",
     selectedGenre: null,
     sortColumn: { path: "title", order: "asc" },
+    isLoading: true
   };
 
   async componentDidMount() {
@@ -26,7 +29,7 @@ class Movies extends Component {
     const genres = [{ _id: "", name: "All Genres" }, ...data];
 
     const { data: movies } = await getMovies();
-    this.setState({ movies, genres: genres });
+    this.setState({ movies, genres: genres, isLoading: false });
   }
 
   handleDelete = async (movie) => {
@@ -99,7 +102,7 @@ class Movies extends Component {
 
   render() {
     const { length: count } = this.state.movies;
-    const { pageSize, currentPage, sortColumn, searchQuery } = this.state;
+    const { pageSize, currentPage, sortColumn, searchQuery, isLoading } = this.state;
     const { user } = this.props;
 
     // if (count === 0) return <p>There are no movies in the database.</p>;
@@ -130,14 +133,25 @@ class Movies extends Component {
           )}
           <p>Showing {totalCount} movies in the database.</p>
           <SearchBox value={searchQuery} onChange={this.handleSearch} />
-          <MoviesTable
-            movies={movies}
-            sortColumn={sortColumn}
-            onLike={this.handleLike}
-            onDelete={this.handleDelete}
-            onSort={this.handleSort}
-          />
-
+          {isLoading && (
+              <div style={{textAlign: "center"}}>
+                <Loader
+                  type="Oval"
+                  color="#00BFFF"
+                  height={100}
+                  width={100}
+                />
+            </div>
+          )}
+          {!isLoading && (
+            <MoviesTable
+              movies={movies}
+              sortColumn={sortColumn}
+              onLike={this.handleLike}
+              onDelete={this.handleDelete}
+              onSort={this.handleSort}
+            />
+          )}
           <Pagination
             itemsCount={totalCount}
             pageSize={pageSize}

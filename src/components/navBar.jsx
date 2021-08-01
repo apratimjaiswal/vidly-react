@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import '../App.css';
 
 const NavBar = ({ user }) => {
   return (
@@ -32,10 +33,10 @@ const NavBar = ({ user }) => {
             </NavLink>
             {!user && (
               <React.Fragment>
-                <NavLink className="nav-item nav-link" to="/login">
+                <NavLink className="nav-item nav-link highlight" to="/login">
                   Login
                 </NavLink>
-                <NavLink className="nav-item nav-link" to="/register">
+                <NavLink className="nav-item nav-link highlight mleft" to="/register">
                   Register
                 </NavLink>
               </React.Fragment>
@@ -45,7 +46,7 @@ const NavBar = ({ user }) => {
                 <NavLink className="nav-item nav-link" to="/profile">
                   {user.name}
                 </NavLink>
-                <NavLink className="nav-item nav-link" to="/logout">
+                <NavLink className="nav-item nav-link highlight" to="/logout">
                   Logout
                 </NavLink>
               </React.Fragment>
