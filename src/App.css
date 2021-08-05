@@ -67,6 +67,12 @@
   width: 23%;
 } */
 
+.footer-custom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones:  */
   .custom-container-col {
@@ -85,6 +91,11 @@
     margin-top: 4%;
     width: 100%;
   }
+
+  .footer-custom {
+    /* position: relative; */
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -96,5 +107,9 @@
 
   .mleft {
     margin-left: 3px;
+  }
+
+  .footer-custom {
+    position: fixed;
   }
 }
