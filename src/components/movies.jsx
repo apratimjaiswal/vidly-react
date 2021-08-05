@@ -134,12 +134,12 @@ class Movies extends Component {
           )}
           <p>Showing {totalCount} movies in the database.</p>
           <SearchBox value={searchQuery} onChange={this.handleSearch} />
-          {!isLoading && (
+          {isLoading && (
             <div style={{ textAlign: "center", padding: "9%" }}>
               <Loader type="Oval" color="#00BFFF" height={100} width={100} />
             </div>
           )}
-          {isLoading && (
+          {!isLoading && (
             <MoviesTable
               movies={movies}
               sortColumn={sortColumn}
