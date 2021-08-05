@@ -21,7 +21,7 @@ class Movies extends Component {
     searchQuery: "",
     selectedGenre: null,
     sortColumn: { path: "title", order: "asc" },
-    isLoading: true
+    isLoading: true,
   };
 
   async componentDidMount() {
@@ -102,7 +102,8 @@ class Movies extends Component {
 
   render() {
     const { length: count } = this.state.movies;
-    const { pageSize, currentPage, sortColumn, searchQuery, isLoading } = this.state;
+    const { pageSize, currentPage, sortColumn, searchQuery, isLoading } =
+      this.state;
     const { user } = this.props;
 
     // if (count === 0) return <p>There are no movies in the database.</p>;
@@ -133,17 +134,12 @@ class Movies extends Component {
           )}
           <p>Showing {totalCount} movies in the database.</p>
           <SearchBox value={searchQuery} onChange={this.handleSearch} />
-          {isLoading && (
-              <div style={{textAlign: "center"}}>
-                <Loader
-                  type="Oval"
-                  color="#00BFFF"
-                  height={100}
-                  width={100}
-                />
+          {!isLoading && (
+            <div style={{ textAlign: "center", padding: "9%" }}>
+              <Loader type="Oval" color="#00BFFF" height={100} width={100} />
             </div>
           )}
-          {!isLoading && (
+          {isLoading && (
             <MoviesTable
               movies={movies}
               sortColumn={sortColumn}
