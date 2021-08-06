@@ -91,11 +91,6 @@
     margin-top: 4%;
     width: 100%;
   }
-
-  .footer-custom {
-    /* position: relative; */
-    display: none;
-  }
 }
 
 @media only screen and (min-width: 992px) {
