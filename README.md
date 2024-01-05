@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Live App Screenshots
+
+![1](https://github.com/apratimjaiswal/vidly-react/assets/85786673/f8d1e3a5-1ab2-4d09-ba9a-2f1ce7afacc3)
+![2](https://github.com/apratimjaiswal/vidly-react/assets/85786673/683c7d16-d780-4e47-943d-d245a65898b3)
+![3](https://github.com/apratimjaiswal/vidly-react/assets/85786673/11e678ed-5360-4abb-aa57-b5bfc9ad7676)
+![4](https://github.com/apratimjaiswal/vidly-react/assets/85786673/2e1e18ff-fd04-4911-ab5f-7fd4472c7133)
+![5](https://github.com/apratimjaiswal/vidly-react/assets/85786673/8f644537-47da-4a8f-ab26-e46058a89adb)
+![6](https://github.com/apratimjaiswal/vidly-react/assets/85786673/05daa843-1346-4253-be90-7d184e4cd05e)
+
 ## Available Scripts
 
 In the project directory, you can run:
